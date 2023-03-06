@@ -1,8 +1,7 @@
-import { Typography } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import { Container } from "@mui/system";
-import { Field, Formik } from "formik";
+import { Field, Formik, Form } from "formik";
 import { TextField } from "formik-mui";
-import { Form } from "react-router-dom";
 import * as Yup from "yup";
 
 const ValidationSchema = Yup.object({
@@ -26,16 +25,19 @@ const Contact: React.FC = () => {
           website: "",
         }}
         validationSchema={ValidationSchema}
-        onSubmit={() => {}}
+        onSubmit={(values) => {
+          alert(JSON.stringify(values));
+        }}
       >
         {() => (
-          <Form>
+          <Form noValidate>
             <br />
             <Field
               component={TextField}
               name="name"
               label="Name"
               required={true}
+              disabled={false}
             />
             <br />
             <br />
@@ -45,10 +47,19 @@ const Contact: React.FC = () => {
               type="email"
               label="Email"
               required={true}
+              disabled={false}
             />
             <br />
             <br />
-            <Field component={TextField} name="website" label="Website" />
+            <Field
+              component={TextField}
+              name="website"
+              label="Website"
+              disabled={false}
+            />
+            <br />
+            <hr />
+            <Button type="submit">Submit</Button>
           </Form>
         )}
       </Formik>
