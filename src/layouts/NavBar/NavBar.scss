@@ -1,0 +1,8 @@
+.NavBar {
+  background: pink;
+  .active {
+    border-bottom: 3px solid currentColor;
+    margin-bottom: -3px;
+    border-radius: 0;
+  }
+}
