@@ -3,6 +3,7 @@ import { Link as RouterLink, useLocation } from "react-router-dom";
 import Paths from "../../routes/Paths";
 import MenuIcon from "@mui/icons-material/Menu";
 import "./Navbar.scss";
+import ColorModeToggle from "../../shared/ColorModeToggle/ColorModeToggle";
 
 const NavBar: React.FC = () => {
   const location = useLocation();
@@ -41,6 +42,7 @@ const NavBar: React.FC = () => {
         <Button color="inherit" component={RouterLink} to={"/fdsfdsgdg"}>
           Not Found
         </Button>
+        <ColorModeToggle />
       </Toolbar>
     </AppBar>
   );

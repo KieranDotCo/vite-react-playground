@@ -1,17 +1,19 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
-import { ThemeProvider } from "@emotion/react";
 import { CssBaseline } from "@mui/material";
-import theme from "./theme";
 import { RouterProvider } from "react-router-dom";
 import "./index.scss";
 import Router from "./routes/Router";
+import ThemeWrapper from "./containers/ThemeWrapper/ThemeWrapper";
+import { RecoilRoot } from "recoil";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <RouterProvider router={Router} />
-    </ThemeProvider>
+    <RecoilRoot>
+      <ThemeWrapper>
+        <CssBaseline />
+        <RouterProvider router={Router} />
+      </ThemeWrapper>
+    </RecoilRoot>
   </React.StrictMode>
 );
