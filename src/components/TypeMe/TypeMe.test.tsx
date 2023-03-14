@@ -10,7 +10,7 @@ describe("TypeMe", () => {
 
     it('should on type change the text', async () => {
       userEvent.type(screen.getByLabelText('Type In Me'), 'Hello World')
-      expect(await screen.findByText('Hello World'))
+      expect(await screen.findByText('Hello World')).toBeDefined()
     })
   });
 
@@ -22,7 +22,7 @@ describe("TypeMe", () => {
 
     it('should render the defaultInput value', async () => {
       expect(screen.getByLabelText('Type In Me')).toHaveValue(defaultInput)
-      expect(await screen.findByText(defaultInput))
+      expect(await screen.findByText(defaultInput)).toBeDefined()
     })
   })
 });
